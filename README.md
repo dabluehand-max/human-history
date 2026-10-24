@@ -19,6 +19,8 @@ npx http-server -p 8790
 - `data/quran/` تُبنى بـ `scripts/build_quran.py` من Quran.com API v4 (بيانات Tanzil للترتيب والمكان).
 - `data/events.json`: الأماكن والأحداث والادعاءات. كل ادعاء: `text`, `certainty`, `source`. الحالة `draft` تعني أنه لم يُراجَع.
 
-## قبل النشر العام
-- التحقق من رخصة نص المصحف (Tanzil: CC BY 3.0 بشرط عدم التعديل) وبيانات Quran.com.
-- اختيار رخصة المشروع (مثل MIT للكود و CC BY-SA للبيانات).
+## الرخصة
+- الكود: MIT (ملف `LICENSE`).
+- البيانات التي كتبها المشروع (`data/events.json` و `data/families/`): CC BY-SA 4.0.
+- نص المصحف وبيانات ترتيب النزول: من Quran.com API v4 وTanzil.net، ويبقى على رخصة مصدره دون تعديل في النص.
+- الخريطة: © OpenStreetMap contributors، عبر OpenFreeMap.
