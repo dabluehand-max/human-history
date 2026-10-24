@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>قصص إيش ما كان</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <h1>قصص إيش ما كان</h1>
+  <nav>
+    <button data-view="map" class="on">الخريطة والزمن</button>
+    <button data-view="quran">القرآن بترتيب النزول</button>
+  </nav>
+</header>
+
+<main>
+  <section id="view-map" class="view on">
+    <div id="map"></div>
+    <aside id="panel">
+      <div id="here"></div>
+      <h3>في العالم في هذه اللحظة</h3>
+      <ul id="world"></ul>
+    </aside>
+    <div id="timeline">
+      <button id="minus" aria-label="سنة أقدم">◀</button>
+      <input id="year" type="range" min="-3000" max="2026" value="570">
+      <button id="plus" aria-label="سنة أحدث">▶</button>
+      <output id="year-label" dir="rtl"></output>
+    </div>
+  </section>
+
+  <section id="view-quran" class="view">
+    <div class="tools">
+      <label>الترتيب
+        <select id="order"><option value="revelation">النزول</option><option value="mushaf">المصحف</option></select>
+      </label>
+      <label>المكان
+        <select id="place"><option value="">الكل</option><option value="makkah">مكي</option><option value="madinah">مدني</option></select>
+      </label>
+      <span id="count"></span>
+    </div>
+    <ol id="surahs"></ol>
+    <article id="reader" hidden></article>
+  </section>
+</main>
+
+<footer>
+  <span class="tag" data-c="نص">نص</span>
+  <span class="tag" data-c="رواية">رواية</span>
+  <span class="tag" data-c="قول">قول</span>
+  <span class="tag" data-c="تقدير">تقدير</span>
+  <span class="tag" data-c="غير معروف">غير معروف</span>
+  <span class="muted">الأداة تعرض ولا تحكم. كل معلومة منسوبة إلى مصدرها.</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

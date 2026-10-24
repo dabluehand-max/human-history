@@ -1,0 +1,54 @@
+{
+  "_note": "بيانات تجريبية للمرحلة 1. كل ادعاء له مصدر ووسم ثبوت. الحالة draft تعني: لم يراجعها مراجع بشري بعد.",
+  "places": [
+    { "id": "makkah", "name": "مكة", "coords": [39.8262, 21.4225], "names": ["مكة", "بكة", "أم القرى"] },
+    { "id": "madinah", "name": "المدينة", "coords": [39.6142, 24.4672], "names": ["المدينة", "يثرب"] },
+    { "id": "sanaa", "name": "صنعاء", "coords": [44.2075, 15.3694], "names": ["صنعاء"] },
+    { "id": "aksum", "name": "أكسوم", "coords": [38.7189, 14.1300], "names": ["أكسوم", "الحبشة"] },
+    { "id": "constantinople", "name": "القسطنطينية", "coords": [28.9784, 41.0082], "names": ["القسطنطينية", "بيزنطة"] },
+    { "id": "ctesiphon", "name": "المدائن", "coords": [44.5806, 33.0936], "names": ["المدائن", "طيسفون"] },
+    { "id": "chang-an", "name": "تشانغآن", "coords": [108.9398, 34.3416], "names": ["تشانغآن", "شيآن"] }
+  ],
+  "events": [
+    {
+      "id": "am-al-fil",
+      "name": "عام الفيل",
+      "time": { "from": 552, "to": 571, "label": "نحو 570م على المشهور", "certainty": "تقدير" },
+      "places": ["makkah", "sanaa"],
+      "quran": [105],
+      "status": "draft",
+      "claims": [
+        { "text": "يذكر القرآن «أصحاب الفيل» وإرسال طير أبابيل ترميهم بحجارة من سجيل، ولا يذكر اسم القائد ولا السنة.", "certainty": "نص", "source": "القرآن، سورة الفيل 105: 1–5" },
+        { "text": "قائد الحملة أبرهة، والي الحبشة على اليمن، وخرج من اليمن قاصدًا الكعبة.", "certainty": "رواية", "source": "السيرة النبوية لابن هشام عن ابن إسحاق" },
+        { "text": "وُلد النبي محمد ﷺ في عام الفيل.", "certainty": "قول", "source": "قول جمهور أهل السير، منهم ابن إسحاق" },
+        { "text": "تحويل عام الفيل إلى نحو 570 أو 571م تقدير شائع، وبعض الباحثين يرى أن حملة أبرهة أقدم من ذلك اعتمادًا على نقش مريغان (نحو 552م).", "certainty": "تقدير", "source": "Lawrence I. Conrad, \"Abraha and Muhammad\", BSOAS 50 (1987)" }
+      ]
+    },
+    {
+      "id": "makki-period",
+      "name": "نزول القرآن في مكة",
+      "time": { "from": 610, "to": 622, "label": "610–622م تقريبًا", "certainty": "تقدير" },
+      "places": ["makkah"],
+      "status": "draft",
+      "claims": [
+        { "text": "86 سورة مصنّفة مكية في بيانات Tanzil، وأولها نزولًا العلق.", "certainty": "قول", "source": "Tanzil.net / Quran.com API v4" }
+      ]
+    },
+    {
+      "id": "madani-period",
+      "name": "نزول القرآن في المدينة",
+      "time": { "from": 622, "to": 632, "label": "622–632م تقريبًا", "certainty": "تقدير" },
+      "places": ["madinah"],
+      "status": "draft",
+      "claims": [
+        { "text": "28 سورة مصنّفة مدنية في بيانات Tanzil، وفي تصنيف بعضها خلاف بين العلماء (مثل الرحمن والرعد والحج).", "certainty": "قول", "source": "Tanzil.net / Quran.com API v4" }
+      ]
+    }
+  ],
+  "world": [
+    { "id": "byzantium-justin2", "name": "الإمبراطورية البيزنطية: حكم جستين الثاني", "time": { "from": 565, "to": 578 }, "place": "constantinople", "certainty": "تقدير", "source": "مرجع عام، بانتظار المراجعة", "status": "draft" },
+    { "id": "sasanian-khosrow1", "name": "فارس الساسانية: حكم كسرى أنوشروان", "time": { "from": 531, "to": 579 }, "place": "ctesiphon", "certainty": "تقدير", "source": "مرجع عام، بانتظار المراجعة", "status": "draft" },
+    { "id": "aksum", "name": "مملكة أكسوم (الحبشة)، ومنها حكم أبرهة اليمن", "time": { "from": 525, "to": 600 }, "place": "aksum", "certainty": "تقدير", "source": "مرجع عام، بانتظار المراجعة", "status": "draft" },
+    { "id": "china-nsd", "name": "الصين: عصر الأسر الشمالية والجنوبية حتى توحيدها في أسرة سوي", "time": { "from": 420, "to": 589 }, "place": "chang-an", "certainty": "تقدير", "source": "مرجع عام، بانتظار المراجعة", "status": "draft" }
+  ]
+}
