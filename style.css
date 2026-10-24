@@ -35,11 +35,11 @@ a, .link { color: var(--riwaya); cursor: pointer; text-decoration: underline; }
 .pin { width: 16px; height: 16px; border-radius: 50%; background: #b3412e; border: 2px solid #fff; box-shadow: 0 0 0 1px #b3412e; cursor: pointer; }
 .pin.world { background: #7b4fa0; box-shadow: 0 0 0 1px #7b4fa0; }
 
-#view-quran { grid-template-columns: 340px 1fr; grid-template-rows: auto 1fr; }
+#view-text { grid-template-columns: 340px 1fr; grid-template-rows: auto 1fr; }
 .tools { grid-column: 1 / 3; display: flex; gap: 12px; align-items: center; padding: 10px 16px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-#surahs { grid-column: 1; overflow-y: auto; margin: 0; padding: 8px 16px; list-style: none; border-inline-end: 1px solid var(--line); }
-#surahs li { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border-radius: 8px; cursor: pointer; }
-#surahs li:hover, #surahs li.on { background: var(--card); }
+#index { grid-column: 1; overflow-y: auto; margin: 0; padding: 8px 16px; list-style: none; border-inline-end: 1px solid var(--line); }
+#index li { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border-radius: 8px; cursor: pointer; }
+#index li:hover { background: var(--card); }
 #reader { grid-column: 2; overflow-y: auto; padding: 16px 24px; }
 #reader .ayat { font-family: "Amiri Quran", serif; font-size: 26px; line-height: 2.4; }
 #reader .n { font-size: 15px; color: var(--muted); margin: 0 4px; }
@@ -50,8 +50,8 @@ footer { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; padding:
 @media (max-width: 760px) {
   #view-map { grid-template-columns: 1fr; grid-template-rows: 55vh auto auto; overflow-y: auto; }
   #map { grid-row: 1; } #timeline { grid-row: 2; } #panel { grid-column: 1; grid-row: 3; border: 0; }
-  #view-quran { grid-template-columns: 1fr; grid-template-rows: auto auto auto; overflow-y: auto; }
-  #surahs { grid-column: 1; max-height: 40vh; border: 0; } #reader { grid-column: 1; }
+  #view-text { grid-template-columns: 1fr; grid-template-rows: auto auto auto; overflow-y: auto; }
+  #index { grid-column: 1; max-height: 40vh; border: 0; } #reader { grid-column: 1; }
 }
 
 /* Human History: الاسم، القرآن والصحيحان، العلامات الزمنية، المقارنة */
@@ -77,3 +77,28 @@ td.mark { text-align: center; font-size: 18px; font-weight: 600; }
 td.small { font-size: 13px; } td.small ul { margin: 0; padding-inline-start: 16px; }
 .canon-col { background: #fff !important; border-inline: 2px solid var(--canon); }
 thead th.canon-col { color: var(--canon); }
+
+/* الشخصيات والمسارات والنصوص */
+#view-people.on { display: block; overflow-y: auto; padding: 16px; }
+.person { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin-bottom: 12px; cursor: pointer; max-width: 760px; }
+.person:hover { border-color: var(--ink); }
+.person button, .jnav button { font: inherit; background: var(--ink); color: var(--bg); border: 0; border-radius: 8px; padding: 6px 14px; cursor: pointer; }
+.pin.station { width: 24px; height: 24px; background: #b3412e; color: #fff; font-size: 12px; font-weight: 600; display: grid; place-items: center; }
+.pin.station.on { background: var(--ink); box-shadow: 0 0 0 3px #f3e3c3; transform: scale(1.25); }
+.pin.alt { width: 12px; height: 12px; background: #fff; border: 2px solid #8a5a1f; box-shadow: none; }
+.jhead { display: flex; justify-content: space-between; align-items: center; }
+.stations { display: flex; flex-wrap: wrap; gap: 4px; padding: 0; list-style: none; counter-reset: st; margin: 8px 0; }
+.stations li { counter-increment: st; font-size: 12px; border: 1px solid var(--line); border-radius: 99px; padding: 0 8px; cursor: pointer; background: #fff; }
+.stations li::before { content: counter(st) ". "; }
+.stations li.on { background: var(--ink); color: var(--bg); }
+.story { background: #fff; border-inline-start: 3px solid var(--qawl); padding: 8px 10px; border-radius: 6px; }
+.claim.place { cursor: pointer; } .claim.place.primary { border-color: #b3412e; }
+.jnav { display: flex; justify-content: space-between; margin: 12px 0; }
+details { margin: 8px 0 16px; } summary { cursor: pointer; color: var(--muted); }
+#ticks i.tp { background: var(--ink); height: 14px; width: 4px; }
+.v.hl { background: #f3e3c3; border-radius: 6px; }
+.bible { font-size: 18px; line-height: 2; } .bible sup { color: var(--muted); font-size: 11px; margin-inline-end: 3px; }
+.chapters { display: flex; flex-wrap: wrap; gap: 4px; margin: 8px 0 12px; }
+.chapters span { min-width: 28px; text-align: center; border: 1px solid var(--line); border-radius: 6px; cursor: pointer; font-size: 13px; }
+.chapters span.on { background: var(--ink); color: var(--bg); }
+#quran-tools { display: inline-flex; gap: 12px; } #quran-tools[hidden] { display: none; }

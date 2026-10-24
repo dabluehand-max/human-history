@@ -14,8 +14,9 @@
   <h1>Human History <span class="sub">التاريخ البشري</span></h1>
   <nav>
     <button data-view="map" class="on">الخريطة والزمن</button>
+    <button data-view="people">الشخصيات</button>
     <button data-view="compare">مقارنة الروايات</button>
-    <button data-view="quran">القرآن بترتيب النزول</button>
+    <button data-view="text">النصوص</button>
   </nav>
 </header>
 
@@ -37,17 +38,24 @@
 
   <section id="view-compare" class="view"><div id="compare"></div></section>
 
-  <section id="view-quran" class="view">
+  <section id="view-people" class="view"><div id="people"></div></section>
+
+  <section id="view-text" class="view">
     <div class="tools">
-      <label>الترتيب
-        <select id="order"><option value="revelation">النزول</option><option value="mushaf">المصحف</option></select>
+      <label>النص
+        <select id="src"><option value="q">القرآن</option><option value="old">العهد القديم (التوراة والأسفار)</option><option value="new">العهد الجديد</option></select>
       </label>
-      <label>المكان
-        <select id="place"><option value="">الكل</option><option value="makkah">مكي</option><option value="madinah">مدني</option></select>
-      </label>
+      <span id="quran-tools">
+        <label>الترتيب
+          <select id="order"><option value="revelation">النزول</option><option value="mushaf">المصحف</option></select>
+        </label>
+        <label>المكان
+          <select id="place"><option value="">الكل</option><option value="makkah">مكي</option><option value="madinah">مدني</option></select>
+        </label>
+      </span>
       <span id="count"></span>
     </div>
-    <ol id="surahs"></ol>
+    <ol id="index"></ol>
     <article id="reader" hidden></article>
   </section>
 </main>
