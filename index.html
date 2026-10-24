@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>قصص إيش ما كان</title>
+<title>Human History</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/maplibre-gl/4.7.1/maplibre-gl.min.css" rel="stylesheet">
@@ -11,9 +11,10 @@
 </head>
 <body>
 <header>
-  <h1>قصص إيش ما كان</h1>
+  <h1>Human History <span class="sub">التاريخ البشري</span></h1>
   <nav>
     <button data-view="map" class="on">الخريطة والزمن</button>
+    <button data-view="compare">مقارنة الروايات</button>
     <button data-view="quran">القرآن بترتيب النزول</button>
   </nav>
 </header>
@@ -28,11 +29,13 @@
     </aside>
     <div id="timeline">
       <button id="minus" aria-label="سنة أقدم">◀</button>
-      <input id="year" type="range" min="-3000" max="2026" value="570">
+      <div class="track"><input id="year" type="range" min="-7000" max="2026" value="-2900"><div id="ticks"></div></div>
       <button id="plus" aria-label="سنة أحدث">▶</button>
       <output id="year-label" dir="rtl"></output>
     </div>
   </section>
+
+  <section id="view-compare" class="view"><div id="compare"></div></section>
 
   <section id="view-quran" class="view">
     <div class="tools">
@@ -55,6 +58,7 @@
   <span class="tag" data-c="قول">قول</span>
   <span class="tag" data-c="تقدير">تقدير</span>
   <span class="tag" data-c="غير معروف">غير معروف</span>
+  <span class="canon-badge">القرآن والصحيحان</span>
   <span class="muted">الأداة تعرض ولا تحكم. كل معلومة منسوبة إلى مصدرها.</span>
 </footer>
 

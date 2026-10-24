@@ -53,3 +53,27 @@ footer { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; padding:
   #view-quran { grid-template-columns: 1fr; grid-template-rows: auto auto auto; overflow-y: auto; }
   #surahs { grid-column: 1; max-height: 40vh; border: 0; } #reader { grid-column: 1; }
 }
+
+/* Human History: الاسم، القرآن والصحيحان، العلامات الزمنية، المقارنة */
+h1 .sub { font-size: 14px; font-weight: 400; color: var(--muted); margin-inline-start: 6px; }
+:root { --canon: #1f7a4d; }
+.claim.canon { background: #fff; border: 2px solid var(--canon); }
+.canon-badge { display: inline-block; font-size: 12px; padding: 0 8px; border-radius: 99px; background: #fff; color: var(--canon); border: 1.5px solid var(--canon); margin-inline-end: 6px; font-weight: 600; }
+.track { flex: 1; position: relative; padding-bottom: 12px; }
+.track #year { width: 100%; }
+#ticks { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; }
+#ticks i { position: absolute; width: 3px; height: 10px; background: #b3412e; transform: translateX(-1px); cursor: pointer; }
+.datings { padding-inline-start: 18px; }
+.datings li { padding: 4px 6px; border-radius: 8px; cursor: pointer; }
+.datings li.on { background: #f3e3c3; }
+.datings .src { color: var(--muted); font-size: 12px; }
+#view-compare.on { display: block; overflow-y: auto; padding: 12px 16px; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; min-width: 760px; background: var(--card); }
+th, td { border: 1px solid var(--line); padding: 6px 8px; vertical-align: top; text-align: start; }
+thead th { background: #efe6d4; }
+td.mark { text-align: center; font-size: 18px; font-weight: 600; }
+.m-y { color: var(--nass); } .m-n { color: #b0a593; } .m-p { color: var(--qawl); } .m-q { color: var(--unknown); }
+td.small { font-size: 13px; } td.small ul { margin: 0; padding-inline-start: 16px; }
+.canon-col { background: #fff !important; border-inline: 2px solid var(--canon); }
+thead th.canon-col { color: var(--canon); }
