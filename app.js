@@ -316,6 +316,8 @@ function showView(v) {
 
 function route() {
   const [, view = "map", a, b, c] = location.hash.split("/");
+  // الخريطة لم تجهز بعد: حدث load يستدعي route من جديد
+  if (!map.getSource("journey") && !["people", "compare", "text"].includes(view)) return;
   if (view === "person") {
     const p = PEOPLE.find((x) => x.id === a);
     if (!p) return go("#/people");
