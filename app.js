@@ -75,7 +75,7 @@ function setYear(y) {
   const people = PEOPLE.filter((p) => p.born <= y && y <= p.died);
   const surahs = SURAHS.filter((s) => s.year_est === y);
   $("#world").innerHTML = [
-    ...people.map((p) => `<li data-person="${p.id}">${tag("تقدير")}<b>${p.name}</b> في عمر ${y - p.born} <span class="muted">(تقدير الأداة) ← مساره</span></li>`),
+    ...people.map((p) => `<li data-person="${p.id}">${tag(p.yearTag || "تقدير")}<b>${p.name}</b> في عمر ${y - p.born} <span class="muted">(${p.yearNote || "تقدير الأداة"}) ← مساره</span></li>`),
     ...world.map((w) => `<li data-w="${w.id}">${tag(w.certainty)}${esc(w.name)}</li>`),
     ...surahs.map((s) => `<li data-surah="${s.id}">${tag("تقدير")}نزول سورة ${s.name} <span class="muted">(تقدير الأداة)</span></li>`),
   ].join("") || `<li class="muted">لا توجد بيانات لهذه السنة بعد.</li>`;
@@ -139,7 +139,7 @@ function renderPeople() {
   $("#people").innerHTML = PEOPLE.map((p) => `<article class="person" data-id="${p.id}">
     <h2>${p.name} <span class="muted">${p.names.filter((n) => n !== p.name).join(" · ")}</span></h2>
     <p>${esc(p.summary)}</p>
-    <p class="muted">${p.stations.length} محطة · نحو ${yearText(p.born)} – ${yearText(p.died)} (تقدير الأداة)</p>
+    <p class="muted">${p.stations.length} محطة · القصة من نحو ${yearText(p.born)} إلى ${yearText(p.died)} (${p.yearNote || "تقدير الأداة"})</p>
     <button>شاهد مساره على الخريطة ←</button></article>`).join("");
   $("#people").querySelectorAll(".person").forEach((a) => (a.onclick = () => go(`#/person/${a.dataset.id}`)));
 }
@@ -176,7 +176,7 @@ function showStation(i, fly = true) {
     <div class="jhead"><b>مسار ${p.name}</b> <span class="link" id="jclose">إغلاق المسار ✕</span></div>
     <ol class="stations">${p.stations.map((x, k) => `<li class="${k === i ? "on" : ""}" data-k="${k}">${x.title}</li>`).join("")}</ol>
     <h2>${i + 1}. ${esc(s.title)}</h2>
-    <p>${tag("تقدير")}نحو ${yearText(s.year)}${s.age != null ? ` · عمره ${s.age} سنة` : ""} <span class="muted">(تقدير الأداة)</span></p>
+    <p>${tag(p.yearTag || "تقدير")}نحو ${yearText(s.year)}${s.age != null ? ` · عمره ${s.age} سنة` : ""} <span class="muted">(${p.yearNote || "تقدير الأداة"})</span></p>
     <p class="story">${esc(s.text)}</p>
     <h3>أين؟ كل الأقوال</h3>
     ${s.places.map((x, k) => `<div class="claim place${x.primary ? " primary" : ""}" data-pl="${k}">${tag(x.certainty)}<b>${esc(x.name)}</b>: ${esc(x.text)}<div class="src">${esc(x.source)}</div></div>`).join("")}
